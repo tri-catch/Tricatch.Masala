@@ -1,6 +1,9 @@
 using Tricatch.Masala.Website.Components;
-using MudBlazor;
 using MudBlazor.Services;
+using Tricatch.Masala.Application.Interfaces;
+using Tricatch.Masala.Infrastructure.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Tricatch.Masala.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,12 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddMudServices();
+
+builder.Services.AddDbContext<MasalaDbContext>(options =>
+     options.UseSqlServer(builder.Configuration.GetConnectionString("MasalaDB"), sqlOptions => sqlOptions.MigrationsAssembly(typeof(Program).Assembly.FullName)));
+
+builder.Services.AddScoped<ILocationMenuRepository, LocationMenuRepository>();
+builder.Services.AddScoped<IMenuItemRepository, MenuItemRepository>();
 
 var app = builder.Build();
 
