@@ -4,7 +4,7 @@ public class MenuItem
 {
     public int Id { get; set; }
 
-    public int MenuId { get; set; }
+    public int LocationMenuId { get; set; }
 
     public string Title { get; set; } = string.Empty;
 

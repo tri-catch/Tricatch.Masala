@@ -10,4 +10,10 @@
     <PackageReference Include="MudBlazor" Version="6.18.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Tricatch.Masala.Application\Tricatch.Masala.Application.csproj" />
+    <ProjectReference Include="..\..\Domain\Tricatch.Masala.Domain\Tricatch.Masala.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Tricatch.Masala.Infrastructure\Tricatch.Masala.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

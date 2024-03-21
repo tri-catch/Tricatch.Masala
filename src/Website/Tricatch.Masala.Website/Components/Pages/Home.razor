@@ -5,3 +5,12 @@
 <MudText Typo="Typo.h6">
     Amazing website coming soon..
 </MudText>
+
+<MudList>
+    @foreach(var item in _menuItems)
+    {
+        <MudListItem>
+            @item.Title
+        </MudListItem>
+    }
+</MudList>
