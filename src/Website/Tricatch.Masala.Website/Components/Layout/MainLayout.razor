@@ -1,6 +1,7 @@
 ﻿@inherits LayoutComponentBase
+@using Tricatch.Masala.Website.Theme
 
-<MudThemeProvider />
+<MudThemeProvider Theme="_theme"/>
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -30,6 +31,7 @@
 
 @code {
     bool _drawerOpen = false;
+    private MudTheme _theme = new WebsiteTheme();
 
     void DrawerToggle()
     {
