@@ -16,7 +16,8 @@ public class WebsiteTheme : MudTheme
             Primary = Colors.Orange.Darken3,
             AppbarBackground = Colors.Shades.White,
             AppbarText = Colors.Shades.Black,
-            TextPrimary = Colors.Shades.Black
+            TextPrimary = Colors.Shades.Black,
+            Dark = Colors.Shades.Black,
         };
     }
 }
