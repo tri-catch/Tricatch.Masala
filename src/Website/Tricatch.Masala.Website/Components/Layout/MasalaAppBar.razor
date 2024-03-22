@@ -4,19 +4,25 @@
     </MudText>
 
     <MudButton Variant="Variant.Text"
-               Color="Color.Primary"
-               Class="ml-4 mr-4">
-        Menu
+               Color=_menuTextColor
+               Class="ml-4 mr-4"
+               OnClick="@(() => SetActiveTabColor(_menuText))"
+               Href="/">
+        @_menuText
     </MudButton>
     <MudButton Variant="Variant.Text"
-               Color="Color.Default"
-               Class="ml-4 mr-4">
-        About
+               Color=_aboutTextColor
+               Class="ml-4 mr-4"
+               OnClick="@(() => SetActiveTabColor(_aboutText))"
+               Href="/about">
+        @_aboutText
     </MudButton>
     <MudButton Variant="Variant.Text"
-               Color="Color.Default"
-               Class="ml-4 mr-4">
-        Contact
+               Color=_contactUsTextColor
+               Class="ml-4 mr-4"
+               OnClick="@(() => SetActiveTabColor(_contactUsText))"
+               Href="/contact">
+        @_contactUsText
     </MudButton>
 
     <MudSpacer />
