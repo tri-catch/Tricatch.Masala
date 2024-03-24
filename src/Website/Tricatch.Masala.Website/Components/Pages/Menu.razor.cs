@@ -9,18 +9,31 @@ public partial class Menu
     [Inject]
     IMenuItemRepository? MenuItemRepository { get; set; }
 
-    private IEnumerable<MenuItem>? _menuItems { get; set; }
-    private int _selectedCategoryId { get; set; }
+    private IEnumerable<MenuItem> _menuItems { get; set; } = new List<MenuItem>();
+    private IList<MenuItem> _displayMenuItems { get; set; } = new List<MenuItem>();
+    private MenuCategory _selectedCategory { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         _menuItems = await MenuItemRepository!.GetMenuItemsAsync();
-        _selectedCategoryId = 0;
+        _displayMenuItems = _menuItems.ToList();
+        _selectedCategory = MenuCategory.None;
     }
 
-    private void OnCategorySwitched(int categoryId) 
+    private void OnCategorySwitched(MenuCategory category) 
     {
-        _selectedCategoryId = categoryId;
+        _selectedCategory = category;
+
+        if (_selectedCategory == MenuCategory.None)
+        {
+            _displayMenuItems = _menuItems.ToList();
+        }
+        else
+        {
+            _displayMenuItems = _menuItems
+                .Where(x => x.Category == _selectedCategory)
+                .ToList();
+        }
     }
 
 }

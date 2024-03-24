@@ -9,7 +9,21 @@
         </MudItem>
 
         <MudItem md="9">
-            <MudText>@($"Active tab index: {_selectedCategoryId}")</MudText>
+            <MudText 
+                Typo="Typo.h3"
+                Style="text-align: center;">
+                @(_selectedCategory.Humanize())
+            </MudText>
+            
+            <MudList>
+                @foreach (var menuItem in _displayMenuItems)
+                {
+                    <MudListItem>
+                        @menuItem.Title
+                    </MudListItem>
+                }
+            </MudList>
+            
         </MudItem>
     </MudGrid>
 </MudContainer>

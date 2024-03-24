@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Tricatch.Masala.Domain.Menu;
 
 namespace Tricatch.Masala.Website.Components;
 
 public partial class MenuCategoryPanel
 {
     [Parameter]
-    public EventCallback<int> CategoryChanged { get; set; }
+    public EventCallback<MenuCategory> CategoryChanged { get; set; }
 
     private int _activeTabIndex { get; set; }
 
@@ -17,6 +18,6 @@ public partial class MenuCategoryPanel
     private async Task OnTabChanged(int tabIndex)
     {
         _activeTabIndex = tabIndex;
-        await CategoryChanged.InvokeAsync(tabIndex);
+        await CategoryChanged.InvokeAsync((MenuCategory)tabIndex);
     }
 }
