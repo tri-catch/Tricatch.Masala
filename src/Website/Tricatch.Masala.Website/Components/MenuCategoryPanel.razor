@@ -2,9 +2,8 @@
 
 <MudTabs Outlined
          Position="Position.Right"
-         MinimumTabWidth="240px"
          ActivePanelIndex="_activeTabIndex"
-         ActivePanelIndexChanged="OnTabChanged">
+         ActivePanelIndexChanged="OnTabChanged" >
 
     @foreach (MenuCategory category in Enum.GetValues(typeof(MenuCategory)))
     {

@@ -4,25 +4,53 @@
 
 <MudContainer Class="mt-16">
     <MudGrid>
-        <MudItem md="3">
-            <MenuCategoryPanel CategoryChanged="OnCategorySwitched"/>
+        <MudItem md="2">
+            <MenuCategoryPanel 
+                CategoryChanged="OnCategorySwitched" />
         </MudItem>
 
-        <MudItem md="9">
+        <MudItem md="10">
             <MudText 
                 Typo="Typo.h3"
                 Style="text-align: center;">
-                @(_selectedCategory.Humanize())
+                <b>@(_selectedCategory.Humanize())</b>
             </MudText>
             
-            <MudList>
+            <MudStack Row
+                Wrap="Wrap.Wrap"
+                Class="mt-16 ml-4 mr-4">
                 @foreach (var menuItem in _displayMenuItems)
                 {
-                    <MudListItem>
-                        @menuItem.Title
-                    </MudListItem>
+                    <MudCard Outlined
+                        Class="ml-3 mr-3 mb-8"
+                        Style="height: 70vh; width: 40vh; position: relative"
+                        Elevation="0">
+
+                        <MudImage 
+                            Style="width: 100%"
+                            Src="@menuItem.Image" />
+
+                        <MudText
+                            Typo="Typo.body2"
+                            Class="ml-2 mr-2">
+                            @menuItem.Description
+                        </MudText>
+
+                        <MudText
+                            Typo="Typo.h6"
+                            Style="position: absolute; bottom: 0; left: 0;"
+                            Class="ml-2">
+                            <b>@menuItem.Title</b>
+                        </MudText>
+
+                        <MudIconButton 
+                            Icon="@Icons.Material.Outlined.AddShoppingCart"
+                            Color="Color.Success"
+                            Style="position: absolute; bottom: 0; right: 0;"/>
+
+                    </MudCard>
                 }
-            </MudList>
+            </MudStack>
             
         </MudItem>
     </MudGrid>
