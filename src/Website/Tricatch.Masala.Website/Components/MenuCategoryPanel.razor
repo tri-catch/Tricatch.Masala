@@ -1,0 +1,15 @@
+﻿@using Tricatch.Masala.Domain.Menu
+
+<MudTabs Outlined
+         Position="Position.Right"
+         MinimumTabWidth="240px"
+         ActivePanelIndex="_activeTabIndex"
+         ActivePanelIndexChanged="OnTabChanged">
+
+    @foreach (MenuCategory category in Enum.GetValues(typeof(MenuCategory)))
+    {
+        <MudTabPanel Text="@category.Humanize()"
+                     Style="font-size: x-large; text-transform: none" />
+    }
+
+</MudTabs>

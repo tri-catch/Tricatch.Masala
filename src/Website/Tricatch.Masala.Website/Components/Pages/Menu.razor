@@ -1,3 +1,15 @@
 ﻿@page "/"
 
 <PageTitle>Masala On Wheels</PageTitle>
+
+<MudContainer Class="mt-16">
+    <MudGrid>
+        <MudItem md="3">
+            <MenuCategoryPanel CategoryChanged="OnCategorySwitched"/>
+        </MudItem>
+
+        <MudItem md="9">
+            <MudText>@($"Active tab index: {_selectedCategoryId}")</MudText>
+        </MudItem>
+    </MudGrid>
+</MudContainer>
