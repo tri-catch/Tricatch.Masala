@@ -13,7 +13,11 @@ public class WebsiteTheme : MudTheme
     {
         Palette = new PaletteLight()
         {
-            AppbarBackground = Colors.Amber.Darken2
+            Primary = Colors.Orange.Darken3,
+            AppbarBackground = Colors.Shades.White,
+            AppbarText = Colors.Shades.Black,
+            TextPrimary = Colors.Shades.Black,
+            Dark = Colors.Shades.Black,
         };
     }
 }

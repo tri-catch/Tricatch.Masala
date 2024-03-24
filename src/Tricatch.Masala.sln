@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tricatch.Masala.Domain", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tricatch.Masala.Infrastructure", "Infrastructure\Tricatch.Masala.Infrastructure\Tricatch.Masala.Infrastructure.csproj", "{ACB80C9B-15D5-4C2D-9F49-041D10B0FC8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tricatch.Masala.Website", "Website\Tricatch.Masala.Website\Tricatch.Masala.Website.csproj", "{3AF6885F-F91F-48A0-8FD6-30383D111CC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tricatch.Masala.Website", "Website\Tricatch.Masala.Website\Tricatch.Masala.Website.csproj", "{3AF6885F-F91F-48A0-8FD6-30383D111CC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

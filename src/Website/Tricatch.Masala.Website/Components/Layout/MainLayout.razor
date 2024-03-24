@@ -6,17 +6,11 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar >
-        Masala On Wheels
-        <MudSpacer />
-        <MudIconButton 
-            Icon="@Icons.Material.Outlined.ShoppingCart" 
-            Color="Color.Inherit" 
-            Edge="Edge.End" 
-            OnClick="@((e) => DrawerToggle())" />
-    </MudAppBar>
+    <MasalaAppBar 
+        IsDrawerOpen="_isDrawerOpen"
+        OnDrawerToggle="DrawerToggle"/>
     <MudDrawer 
-        @bind-Open="_drawerOpen" 
+        @bind-Open="_isDrawerOpen" 
         ClipMode="DrawerClipMode.Always" 
         Elevation="2" 
         Anchor="Anchor.End">
@@ -30,11 +24,11 @@
 </MudLayout>
 
 @code {
-    bool _drawerOpen = false;
     private MudTheme _theme = new WebsiteTheme();
+    private bool _isDrawerOpen = false;
 
     void DrawerToggle()
     {
-        _drawerOpen = !_drawerOpen;
+        _isDrawerOpen = !_isDrawerOpen;
     }
 }
