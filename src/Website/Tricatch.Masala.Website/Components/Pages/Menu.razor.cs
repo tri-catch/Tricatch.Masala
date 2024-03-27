@@ -9,6 +9,8 @@ public partial class Menu
     [Inject]
     IMenuItemRepository? MenuItemRepository { get; set; }
 
+    public EventCallback<MenuItem> MenuItemAdded { get; set; }
+
     private IEnumerable<MenuItem> _menuItems { get; set; } = new List<MenuItem>();
     private IList<MenuItem> _displayMenuItems { get; set; } = new List<MenuItem>();
     private MenuCategory _selectedCategory { get; set; }
@@ -36,4 +38,8 @@ public partial class Menu
         }
     }
 
+    private async Task OnMenuItemAdded(MenuItem menuItem)
+    {
+        await MenuItemAdded.InvokeAsync(menuItem);
+    }
 }

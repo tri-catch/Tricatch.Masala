@@ -1,1 +1,94 @@
-﻿
+﻿<div 
+    class="ml-2 mr-2 mt-8">
+    <MudText>
+        <b>Order Summary:</b>
+    </MudText>
+
+    <MudDivider 
+        Class="mt-4" />
+
+    <MudList>
+        <MudListItem>
+            
+            <MudStack Row>
+                
+                <MudText>
+                    (1) Chicken Tikka Masala
+                </MudText>
+
+                <MudSpacer />
+
+                <MudIconButton 
+                    Icon="@Icons.Material.Filled.Add"
+                    Color="Color.Success"/>
+
+                <MudIconButton 
+                    Icon="@Icons.Material.Filled.Delete"
+                    Color="Color.Error"/>
+            </MudStack>
+            
+            <MudText>
+                $13.99
+            </MudText>
+
+        </MudListItem>
+        <MudListItem>
+            <MudStack Row>
+
+                <MudText>
+                    (2) Garlic Naan
+                </MudText>
+
+                <MudSpacer />
+
+                <MudIconButton 
+                    Icon="@Icons.Material.Filled.Add"
+                    Color="Color.Success" />
+
+                <MudIconButton 
+                    Icon="@Icons.Material.Filled.Delete"
+                    Color="Color.Error" />
+            </MudStack>
+            <MudText>
+                $4.50 x 2 = $9.00
+            </MudText>
+        </MudListItem>
+        <MudListItem>
+            <MudStack Row>
+                
+                <MudText>
+                    (1) Mango Lassi
+                </MudText>
+
+                <MudSpacer />
+
+                <MudIconButton 
+                    Icon="@Icons.Material.Filled.Add"
+                    Color="Color.Success"/>
+
+                <MudIconButton 
+                    Icon="@Icons.Material.Filled.Delete"
+                    Color="Color.Error"/>
+            </MudStack>
+            <MudText>
+                $4.50
+            </MudText>
+        </MudListItem>
+    </MudList>
+
+    <MudDivider 
+        Class="mb-4" />
+
+    <MudText>
+        Subtotal = $27.49
+    </MudText>
+
+    <MudButton
+        Variant="Variant.Filled" 
+        EndIcon="@Icons.Material.Filled.ShoppingCartCheckout" 
+        Class="ml-8 mt-8 mb-8"
+        Color="Color.Primary"
+        Style="color: white; width: 20vw; height: 50px;">
+        Continue to checkout
+    </MudButton>
+</div>

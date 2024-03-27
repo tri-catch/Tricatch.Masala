@@ -23,30 +23,36 @@
                 {
                     <MudCard Outlined
                         Class="ml-3 mr-3 mb-8"
-                        Style="height: 70vh; width: 40vh; position: relative"
+                        Style="width: 18vw; position: relative"
                         Elevation="0">
 
                         <MudImage 
                             Style="width: 100%"
                             Src="@menuItem.Image" />
 
-                        <MudText
-                            Typo="Typo.body2"
-                            Class="ml-2 mr-2">
-                            @menuItem.Description
-                        </MudText>
+                        <MudCardContent>
+                            <MudText
+                                Typo="Typo.body2"
+                                Class="mb-16">
+                                @menuItem.Description
+                            </MudText>
+                        </MudCardContent>
+                        
 
                         <MudText
-                            Typo="Typo.h6"
+                            Typo="Typo.subtitle2"
                             Style="position: absolute; bottom: 0; left: 0;"
-                            Class="ml-2">
-                            <b>@menuItem.Title</b>
+                            Class="ml-2 mb-2">
+                            <b>@menuItem.Title - $@menuItem.Price</b>
                         </MudText>
 
                         <MudIconButton 
                             Icon="@Icons.Material.Outlined.AddShoppingCart"
                             Color="Color.Success"
-                            Style="position: absolute; bottom: 0; right: 0;"/>
+                            Variant="Variant.Outlined"
+                            Style="position: absolute; bottom: 0; right: 0;"
+                            Class="mr-2 mb-2"
+                            OnClick="() => OnMenuItemAdded(menuItem)"/>
 
                     </MudCard>
                 }
